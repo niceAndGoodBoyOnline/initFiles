@@ -1,0 +1,16 @@
+[Unit]
+Description=Sam's Simple Server
+After=multi-user.target
+
+[Service]
+ExecStart=/home/ubuntu/SimpleServer
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=simple-server
+User=ubuntu
+EnvironmentFile=/home/ubuntu/app.env
+
+[Install]
+WantedBy=multi-user.target 
